@@ -1,0 +1,31 @@
+name: Figma Daily News Sync
+
+on:
+  schedule:
+    # UTC 1:00 = Beijing 9:00
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python deps
+        run: pip install requests
+
+      - name: Install Playwright browsers
+        run: pip install playwright && playwright install chromium
+
+      - name: Run Figma news fetcher
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
+        run: python fetch_figma_news.py
