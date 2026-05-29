@@ -1,0 +1,13 @@
+[0529/101043.217:INFO:third_party\blink\renderer\modules\peerconnection\peer_connection_dependency_factory.cc:941] Running WebRTC with a combined Network and Worker thread.
+[0529/101043.286:INFO:third_party\blink\renderer\platform\p2p\ipc_socket_factory.cc:576] Setting new p2p socket buffer limit to 262144
+[0529/101043.286:INFO:third_party\blink\renderer\platform\p2p\ipc_socket_factory.cc:576] Setting new p2p socket buffer limit to 262144
+[0529/101043.296:ERROR:services\network\p2p\socket_manager.cc:137] Failed to resolve address for stun.cloudflare.com., errorcode: -105
+[0529/101043.298:ERROR:services\network\p2p\socket_manager.cc:137] Failed to resolve address for stun.cloudflare.com., errorcode: -105
+[0529/101043.298:ERROR:services\network\p2p\socket_manager.cc:137] Failed to resolve address for stun.cloudflare.com., errorcode: -105
+[0529/101043.298:WARNING:third_party\webrtc\p2p\base\stun_port.cc:470] Port[2f24980:0:1:0:host:Net[any:0:0:0:x:x:x:x:x/0:Wildcard:id=0]]: StunPort: stun host lookup received error -1
+[0529/101043.308:WARNING:third_party\webrtc\p2p\base\stun_port.cc:470] Port[3793800:1:1:0:host:Net[any:0:0:0:x:x:x:x:x/0:Wildcard:id=0]]: StunPort: stun host lookup received error -1
+[0529/101043.308:WARNING:third_party\webrtc\p2p\base\stun_port.cc:470] Port[3793f00:2:1:0:host:Net[any:0:0:0:x:x:x:x:x/0:Wildcard:id=0]]: StunPort: stun host lookup received error -1
+[0529/101044.022:WARNING:third_party\webrtc\media\engine\webrtc_voice_engine.cc:803] Attempting to stop aecdump when no audio processing module is present
+[0529/101044.773:ERROR:gpu\command_buffer\service\gl_utils.cc:430] [.WebGL-0xabc036bf800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0529/101044.794:ERROR:gpu\command_buffer\service\gl_utils.cc:430] [.WebGL-0xabc036bf800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[0529/101044.822:ERROR:gpu\command_buffer\service\webgpu_decoder_impl.cc:1724] Failed to query ID3D11Device from ANGLE.

@@ -11,7 +11,7 @@ import requests
 from datetime import datetime, timezone, timedelta
 
 NOTION_API_KEY = os.environ["NOTION_API_KEY"]
-NOTION_PAGE_ID = os.environ["NOTION_PAGE_ID"]
+NOTION_PAGE_ID = os.environ.get("NOTION_FIGMA_PAGE_ID", os.environ.get("NOTION_PAGE_ID", ""))
 BLOG_URL = "https://www.figma.com/blog/"
 
 NOTION_HEADERS = {

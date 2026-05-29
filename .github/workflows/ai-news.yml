@@ -1,0 +1,50 @@
+name: AI News Daily Sync
+
+on:
+  schedule:
+    # UTC 1:00 = Beijing 9:00
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  figma:
+    name: Sync Figma Blog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install requests playwright && playwright install chromium
+
+      - name: Run Figma news fetcher
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_PAGE_ID: ${{ secrets.NOTION_FIGMA_PAGE_ID }}
+        run: python fetch_figma_news.py
+
+  openai:
+    name: Sync OpenAI Blog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Run OpenAI news fetcher
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_OPENAI_PAGE_ID: ${{ secrets.NOTION_OPENAI_PAGE_ID }}
+        run: python fetch_openai_news.py
